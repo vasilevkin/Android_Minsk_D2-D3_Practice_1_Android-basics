@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:paddingTop="40dp"
+    android:weightSum="4">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextField1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_weight="1"
+            android:text="Field 1" />
+
+        <EditText
+            android:id="@+id/editTextField2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_weight="1"
+            android:text="Field 2" />
+    </LinearLayout>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <RadioButton
+            android:id="@+id/radioButtonOperation1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Operation 1" />
+
+        <RadioButton
+            android:id="@+id/radioButtonOperation2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Operation 2" />
+
+        <RadioButton
+            android:id="@+id/radioButtonOperation3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Operation 3" />
+
+        <RadioButton
+            android:id="@+id/radioButtonOperation4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Operation 4" />
+
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/checkBoxFloatValues"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Float Values" />
+
+    <CheckBox
+        android:id="@+id/checkBoxSignedValues"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Signed Values" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textViewResultField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/calculateButton"
+            android:layout_below="@id/checkBoxSignedValues"
+            android:layout_weight="1"
+            android:text="Result Field" />
+
+        <Button
+            android:id="@+id/calculateButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_weight="1"
+            android:text="Calculate Button" />
+
+    </LinearLayout>
+
+</LinearLayout>
