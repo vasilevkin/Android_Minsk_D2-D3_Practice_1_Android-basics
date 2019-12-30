@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Minsk Practice 1</string>
+    <string name="field_1">Number 1</string>
+    <string name="field_2">Number 2</string>
+    <string name="operation_1">Plus</string>
+    <string name="operation_2">Minus</string>
+    <string name="operation_3">Divide</string>
+    <string name="operation_4">Multiply</string>
+    <string name="float_values">Use float numbers</string>
+    <string name="signed_values">Use signed numbers</string>
+    <string name="result_field">Result</string>
+    <string name="calculate_button">Calculate</string>
+    <string name="operation_not_found">Please, choose an operation</string>
 </resources>

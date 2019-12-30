@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:layout_weight="1"
-        android:text="Field 1" />
+        android:text="@string/field_1" />
 
     <EditText
         android:id="@+id/editTextField2"
@@ -21,11 +21,10 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:layout_weight="1"
-        android:text="Field 2" />
+        android:text="@string/field_2" />
 
     <RadioGroup
         android:layout_width="match_parent"
-
         android:layout_height="wrap_content"
         android:layout_weight="1">
 
@@ -33,25 +32,25 @@
             android:id="@+id/radioButtonOperation1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Operation 1" />
+            android:text="@string/operation_1" />
 
         <RadioButton
             android:id="@+id/radioButtonOperation2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Operation 2" />
+            android:text="@string/operation_2" />
 
         <RadioButton
             android:id="@+id/radioButtonOperation3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Operation 3" />
+            android:text="@string/operation_3" />
 
         <RadioButton
             android:id="@+id/radioButtonOperation4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Operation 4" />
+            android:text="@string/operation_4" />
 
     </RadioGroup>
 
@@ -60,33 +59,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Float Values" />
+        android:text="@string/float_values" />
 
     <CheckBox
         android:id="@+id/checkBoxSignedValues"
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Signed Values" />
+        android:text="@string/signed_values" />
 
     <TextView
         android:id="@+id/textViewResultField"
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/calculateButton"
-        android:layout_below="@id/checkBoxSignedValues"
         android:layout_weight="2"
-        android:text="Result Field" />
+        android:text="@string/result_field" />
 
     <Button
         android:id="@+id/calculateButton"
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_weight="0.5"
-        android:text="Calculate Button" />
+        android:text="@string/calculate_button" />
 
 </LinearLayout>
