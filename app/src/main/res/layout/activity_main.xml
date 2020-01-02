@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:layout_weight="1"
-        android:text="@string/field_1" />
+        android:hint="@string/field_1"
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/editTextField2"
@@ -21,7 +22,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:layout_weight="1"
-        android:text="@string/field_2" />
+        android:hint="@string/field_2"
+        android:inputType="number" />
 
     <RadioGroup
         android:layout_width="match_parent"
@@ -59,6 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:checked="true"
         android:text="@string/float_values" />
 
     <CheckBox
@@ -66,6 +69,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:checked="true"
         android:text="@string/signed_values" />
 
     <TextView
@@ -80,6 +84,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.5"
+        android:onClick="calculate"
         android:text="@string/calculate_button" />
 
 </LinearLayout>
