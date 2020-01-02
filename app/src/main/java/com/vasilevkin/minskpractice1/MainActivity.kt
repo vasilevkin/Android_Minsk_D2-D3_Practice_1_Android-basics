@@ -43,6 +43,58 @@ class MainActivity : AppCompatActivity() {
         if (mathOperation == MathOperation.NOT_SET) {
             Toast.makeText(this, R.string.operation_not_found, Toast.LENGTH_LONG)
                 .show()
+            return
+        }
+
+        val number1 = field1.text.toString().toDouble()
+        val number2 = field2.text.toString().toDouble()
+
+        val resultNumber: Double
+
+        when (mathOperation) {
+            MathOperation.PLUS -> {
+                resultNumber = number1 + number2
+            }
+            MathOperation.MINUS -> {
+                resultNumber = number1 - number2
+            }
+            MathOperation.DIVIDE -> {
+                resultNumber = number1 / number2
+            }
+            MathOperation.MULTIPLY -> {
+                resultNumber = number1 * number2
+            }
+            else -> {
+                resultNumber = 0.0
+            }
+        }
+
+        resultField.text = resultNumber.toString()
+
+    }
+
+    fun onRadioButtonClicked(view: View) {
+        if (view is RadioButton) {
+            val checked = view.isChecked
+
+            when (view.id) {
+                R.id.radioButtonOperation1_plus ->
+                    if (checked) {
+                        mathOperation = MathOperation.PLUS
+                    }
+                R.id.radioButtonOperation2_minus ->
+                    if (checked) {
+                        mathOperation = MathOperation.MINUS
+                    }
+                R.id.radioButtonOperation3_divide ->
+                    if (checked) {
+                        mathOperation = MathOperation.DIVIDE
+                    }
+                R.id.radioButtonOperation4_multiply ->
+                    if (checked) {
+                        mathOperation = MathOperation.MULTIPLY
+                    }
+            }
         }
     }
 }

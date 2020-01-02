@@ -31,27 +31,31 @@
         android:layout_weight="1">
 
         <RadioButton
-            android:id="@+id/radioButtonOperation1"
+            android:id="@+id/radioButtonOperation1_plus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
             android:text="@string/operation_1" />
 
         <RadioButton
-            android:id="@+id/radioButtonOperation2"
+            android:id="@+id/radioButtonOperation2_minus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
             android:text="@string/operation_2" />
 
         <RadioButton
-            android:id="@+id/radioButtonOperation3"
+            android:id="@+id/radioButtonOperation3_divide"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
             android:text="@string/operation_3" />
 
         <RadioButton
-            android:id="@+id/radioButtonOperation4"
+            android:id="@+id/radioButtonOperation4_multiply"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
             android:text="@string/operation_4" />
 
     </RadioGroup>
