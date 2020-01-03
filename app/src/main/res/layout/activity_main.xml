@@ -14,7 +14,7 @@
         android:layout_marginBottom="16dp"
         android:layout_weight="1"
         android:hint="@string/field_1"
-        android:inputType="number" />
+        android:inputType="number|numberDecimal|numberSigned" />
 
     <EditText
         android:id="@+id/editTextField2"
@@ -23,7 +23,7 @@
         android:layout_marginBottom="16dp"
         android:layout_weight="1"
         android:hint="@string/field_2"
-        android:inputType="number" />
+        android:inputType="number|numberDecimal|numberSigned" />
 
     <RadioGroup
         android:layout_width="match_parent"
@@ -66,6 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:checked="true"
+        android:onClick="onCheckboxClicked"
         android:text="@string/float_values" />
 
     <CheckBox
@@ -74,6 +75,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:checked="true"
+        android:onClick="onCheckboxClicked"
         android:text="@string/signed_values" />
 
     <TextView

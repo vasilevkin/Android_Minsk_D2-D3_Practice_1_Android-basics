@@ -1,6 +1,8 @@
 package com.vasilevkin.minskpractice1
 
 import android.os.Bundle
+import android.text.InputType
+import android.text.method.DigitsKeyListener
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -37,6 +39,8 @@ class MainActivity : AppCompatActivity() {
         resultField = findViewById(R.id.textViewResultField)
         calculateButton = findViewById(R.id.calculateButton)
 
+        field1.keyListener = DigitsKeyListener.getInstance("0123456789")
+        field2.keyListener = DigitsKeyListener.getInstance("0123456789")
     }
 
     fun calculate(view: View) {
@@ -96,5 +100,40 @@ class MainActivity : AppCompatActivity() {
                     }
             }
         }
+    }
+
+    fun onCheckboxClicked(view: View) {
+        if (view is CheckBox) {
+            val checked = view.isChecked
+
+            when (view.id) {
+                R.id.checkBoxFloatValues ->
+                    if (checked) {
+                        field1.inputType =
+                            InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_FLAG_DECIMAL
+                        field2.inputType =
+                            InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_FLAG_DECIMAL
+                    } else {
+                        field1.inputType = InputType.TYPE_CLASS_NUMBER
+                        field2.inputType = InputType.TYPE_CLASS_NUMBER
+                    }
+                R.id.checkBoxSignedValues ->
+                    if (checked) {
+                        field1.inputType =
+                            InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_FLAG_SIGNED
+                        field2.inputType =
+                            InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_FLAG_SIGNED
+                    } else {
+                        field1.inputType = InputType.TYPE_CLASS_NUMBER
+                        field2.inputType = InputType.TYPE_CLASS_NUMBER
+                    }
+            }
+        }
+    }
+
+    fun EditText.onlyNumbersFor(editText: EditText, float: Boolean, signed: Boolean) {
+        inputType = InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_FLAG_DECIMAL or
+                InputType.TYPE_NUMBER_FLAG_SIGNED
+        keyListener = DigitsKeyListener.getInstance("0123456789")
     }
 }
