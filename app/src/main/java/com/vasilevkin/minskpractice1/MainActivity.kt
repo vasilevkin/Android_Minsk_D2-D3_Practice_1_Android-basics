@@ -24,9 +24,20 @@ class MainActivity : AppCompatActivity() {
     private lateinit var signedValues: CheckBox
     private lateinit var resultField: TextView
     private lateinit var calculateButton: Button
+    private lateinit var radioButton1: RadioButton
+    private lateinit var radioButton2: RadioButton
+    private lateinit var radioButton3: RadioButton
+    private lateinit var radioButton4: RadioButton
 
     private var mathOperation: MathOperation = MathOperation.NOT_SET
 
+    companion object {
+        private val RESULT_TEXT_VALUE = "resultTextValue"
+        private val RADIOBUTTON_1 = "radiobutton1"
+        private val RADIOBUTTON_2 = "radiobutton2"
+        private val RADIOBUTTON_3 = "radiobutton3"
+        private val RADIOBUTTON_4 = "radiobutton4"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +45,10 @@ class MainActivity : AppCompatActivity() {
 
         field1 = findViewById(R.id.editTextField1)
         field2 = findViewById(R.id.editTextField2)
+        radioButton1 = findViewById(R.id.radioButtonOperation1_plus)
+        radioButton2 = findViewById(R.id.radioButtonOperation2_minus)
+        radioButton3 = findViewById(R.id.radioButtonOperation3_divide)
+        radioButton4 = findViewById(R.id.radioButtonOperation4_multiply)
         floatValues = findViewById(R.id.checkBoxFloatValues)
         signedValues = findViewById(R.id.checkBoxSignedValues)
         resultField = findViewById(R.id.textViewResultField)
@@ -41,6 +56,24 @@ class MainActivity : AppCompatActivity() {
 
         field1.keyListener = DigitsKeyListener.getInstance("0123456789")
         field2.keyListener = DigitsKeyListener.getInstance("0123456789")
+
+        if (savedInstanceState != null) {
+            radioButton1.isChecked = savedInstanceState.getBoolean(RADIOBUTTON_1)
+            radioButton2.isChecked = savedInstanceState.getBoolean(RADIOBUTTON_2)
+            radioButton3.isChecked = savedInstanceState.getBoolean(RADIOBUTTON_3)
+            radioButton4.isChecked = savedInstanceState.getBoolean(RADIOBUTTON_4)
+            resultField.text = savedInstanceState.getCharSequence(RESULT_TEXT_VALUE)
+        }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        outState.putCharSequence(RESULT_TEXT_VALUE, resultField.text)
+        outState.putBoolean(RADIOBUTTON_1, radioButton1.isChecked)
+        outState.putBoolean(RADIOBUTTON_2, radioButton2.isChecked)
+        outState.putBoolean(RADIOBUTTON_3, radioButton3.isChecked)
+        outState.putBoolean(RADIOBUTTON_4, radioButton4.isChecked)
     }
 
     fun calculate(view: View) {
