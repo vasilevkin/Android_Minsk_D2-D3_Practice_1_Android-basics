@@ -8,6 +8,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -88,15 +89,43 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.reset -> {
-
+                showResetAlertDialog()
                 true
             }
             else -> super.onOptionsItemSelected(item)
         }
     }
 
-    private fun reset() {
+    private fun showResetAlertDialog() {
+        val builder = AlertDialog.Builder(this@MainActivity)
+        builder.setTitle("Reset")
+        builder.setMessage("Are you sure to reset all to default values?")
+        builder.setPositiveButton("YES") { dialog, which ->
+            Toast.makeText(applicationContext, "Reset to default values", Toast.LENGTH_SHORT).show()
+            reset()
+        }
+        builder.setNegativeButton("No") { dialog, which ->
+            Toast.makeText(applicationContext, "You are not agree.", Toast.LENGTH_SHORT).show()
+        }
+        builder.setNeutralButton("Cancel") { _, _ ->
+            Toast.makeText(applicationContext, "You cancelled the dialog.", Toast.LENGTH_SHORT)
+                .show()
+        }
 
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+
+    private fun reset() {
+        field1.text = null
+        field2.text = null
+        radioButton1.isChecked = false
+        radioButton2.isChecked = false
+        radioButton3.isChecked = false
+        radioButton4.isChecked = false
+        floatValues.isChecked = true
+        signedValues.isChecked = true
+        resultField.text = null
     }
 
     fun calculate(view: View) {
