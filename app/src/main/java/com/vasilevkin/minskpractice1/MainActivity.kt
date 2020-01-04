@@ -3,6 +3,9 @@ package com.vasilevkin.minskpractice1
 import android.os.Bundle
 import android.text.InputType
 import android.text.method.DigitsKeyListener
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -74,6 +77,26 @@ class MainActivity : AppCompatActivity() {
         outState.putBoolean(RADIOBUTTON_2, radioButton2.isChecked)
         outState.putBoolean(RADIOBUTTON_3, radioButton3.isChecked)
         outState.putBoolean(RADIOBUTTON_4, radioButton4.isChecked)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.reset -> {
+
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun reset() {
+
     }
 
     fun calculate(view: View) {

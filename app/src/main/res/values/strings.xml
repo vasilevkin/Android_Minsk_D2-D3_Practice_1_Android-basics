@@ -11,4 +11,5 @@
     <string name="result_field">Result</string>
     <string name="calculate_button">Calculate</string>
     <string name="operation_not_found">Please, choose an operation</string>
+    <string name="reset">Reset</string>
 </resources>
