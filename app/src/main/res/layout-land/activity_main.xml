@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/GreenText"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -14,19 +15,23 @@
 
         <EditText
             android:id="@+id/editTextField1"
+            style="@style/GreenText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:layout_weight="1"
-            android:text="Field 1" />
+            android:hint="@string/field_1"
+            android:inputType="number|numberDecimal|numberSigned" />
 
         <EditText
             android:id="@+id/editTextField2"
+            style="@style/GreenText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:layout_weight="1"
-            android:text="Field 2" />
+            android:hint="@string/field_1"
+            android:inputType="number|numberDecimal|numberSigned" />
     </LinearLayout>
 
     <RadioGroup
@@ -36,6 +41,7 @@
 
         <RadioButton
             android:id="@+id/radioButtonOperation1_plus"
+            style="@style/GreenText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
@@ -43,6 +49,7 @@
 
         <RadioButton
             android:id="@+id/radioButtonOperation2_minus"
+            style="@style/GreenText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
@@ -50,6 +57,7 @@
 
         <RadioButton
             android:id="@+id/radioButtonOperation3_divide"
+            style="@style/GreenText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
@@ -57,6 +65,7 @@
 
         <RadioButton
             android:id="@+id/radioButtonOperation4_multiply"
+            style="@style/GreenText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
@@ -66,17 +75,23 @@
 
     <CheckBox
         android:id="@+id/checkBoxFloatValues"
+        style="@style/GreenText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Float Values" />
+        android:checked="true"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/float_values" />
 
     <CheckBox
         android:id="@+id/checkBoxSignedValues"
+        style="@style/GreenText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Signed Values" />
+        android:checked="true"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/signed_values" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -85,20 +100,20 @@
 
         <TextView
             android:id="@+id/textViewResultField"
+            style="@style/GreenText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/calculateButton"
-            android:layout_below="@id/checkBoxSignedValues"
             android:layout_weight="1"
-            android:text="Result Field" />
+            android:text="@string/result_field" />
 
         <Button
             android:id="@+id/calculateButton"
+            style="@style/GreenText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_weight="1"
-            android:text="Calculate Button" />
+            android:onClick="calculate"
+            android:text="@string/calculate_button" />
 
     </LinearLayout>
 
